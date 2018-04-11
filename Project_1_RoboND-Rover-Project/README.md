@@ -1,6 +1,6 @@
 [![Udacity Robotics Nanodegree](http://tugan0329.bitbucket.io/imgs/github/robond.svg)](https://www.udacity.com/robotics)
 
-![header img](misc/rover_img.jpg)
+![header img][image3]
 
 # Search and Sample Return
 
