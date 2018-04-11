@@ -22,10 +22,6 @@ In this project, I will be writing code to autonomously map a simulated environm
 
 This project is inspired by the [NASA sample return challenge](https://www.nasa.gov/directorates/spacetech/centennial_challenges/sample_return_robot/index.html)
 
-## Get the Code 
-You can download this folder of code [here](https://tugan0329.bitbucket.io/downloads/udacity/robotics/search-and-sample-return/p1-search-and-sample-return.zip)
-
-
 ## Getting the Simulator
 
 Use the links below to get the simulator version that's appropriate for your operating system.
