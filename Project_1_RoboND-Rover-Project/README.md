@@ -12,7 +12,7 @@
 [image4]: misc/grid_perspective_transform.png
 [image5]: misc/autonomous_mode.JPG
 [image6]: misc/grid_threshold.png
-[image7]: misc/grid_with_direction.jpg
+[image7]: misc/coord.png
 [image8]: misc/rock_threshold.png
 [image9]: misc/vision.png
 [image10]: misc/simulator.jpg
