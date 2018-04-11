@@ -16,7 +16,7 @@
 [image8]: misc/rock_threshold.png
 [image9]: misc/vision.png
 [image10]: misc/simulator_setting.png
-[image11]: misc/simulator.png
+[image11]: misc/simulator.jpg
 
 ## Project Objective
 In this project, I will be writing code to autonomously map a simulated environment, search for samples of interest, and pick them up. 
