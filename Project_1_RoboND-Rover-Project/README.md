@@ -10,7 +10,7 @@
 [image2]: calibration_images/example_rock1.jpg 
 [image3]: misc/rover_image.jpg
 [image4]: misc/grid_perspective_transform.png
-[image5]: misc/autonomous_mode.jpg
+[image5]: misc/autonomous_mode.JPG
 [image6]: misc/grid_threshold.png
 [image7]: misc/grid_with_direction.jpg
 [image8]: misc/rock_threshold.png
