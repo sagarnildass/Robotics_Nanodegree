@@ -68,7 +68,7 @@ python drive_rover.py
 
 Then, double click to open the simulator you downloaded above. 
 
-To produce the results I have, it is recommended to use 800x600 resolution and "Fantastic" graphic quality.
+To produce the results I have, it is recommended to use 1024x768 resolution and "Fantastic" graphic quality.
 
 
 
@@ -193,7 +193,7 @@ The perception of the Rover is handled in the `perception_step()` (at the bottom
 
 This step is highly similar to the `process_image` described above in the "Notebook Analysis - Mapping" section. There are only three more modifications.
 
-First, I only update the worldmap when Rover has a normal view. In other words, not when it is stuck in a rock, beyond the simulated world boundry, or got flipped and looking at the sky. I accomplish this by updating the world map only when Rover roll and pitch are both smaller than `0.7` or bigger than `359.5`.
+First, I only update the worldmap when Rover has a normal view. In other words, not when it is stuck in a rock, beyond the simulated world boundry, or got flipped and looking at the sky. I accomplish this by updating the world map only when Rover roll and pitch are both smaller than `0.7` or bigger than `359.5`. This increases the fidelity quite a bit because when we are braking hard or turning sharp, our roll and pitch are not close to zero and hence that is not the ideal position for mapping.
 
 ```
 roll, pitch = Rover.roll, Rover.pitch
@@ -204,7 +204,7 @@ if roll <= 0.7 or roll >= 359.5:
         Rover.worldmap[navigable_y_world, navigable_x_world, 2] += 255
 ```
  
-Second, I update a vision map so users can see what Rover is perceiving, where red indicates obstacles; blue indicates navigable terrain, and green/yellow indicates the rock.
+Second, I update a vision map so users can see what Rover is perceiving, where red indicates obstacles; blue indicates navigable terrain, and yellow indicates the rock.
 
 ```
 Rover.vision_image[:,:,0] = obstacle_threshed * 255
@@ -272,9 +272,13 @@ if len(Rover.nav_angles) >= Rover.random_direction_angles:
 
 Someimes a Rover can get stuck for various reasons. Whenever the Rover is at a speed slower than 0.2 larger than -0.2 (aka. going backwards) but in 'forward' mode, I start counting how long it has been slower than 0.2 speed. Every two seconds, I let Rover turn the steer more and more, switch between postive direction and negataive direction, and accelerating backwards. I stop the throttle and turn again before accelerating if Rover is trapped for more than 5 seconds.
 
+**Getting out of a loop**
+
+Sometimes, if the most of the navigable angle falls to the left or right in a big open space, the rover falls in a loop. Which means, it starts rotating in a circle endlessly as most of the nevigable terrain lies always to the left/right while it is in that loop. To break that loop, I have defined a new boolean variable in the Rover class called: is_in_loop which is by default False. I have also defined another new variable called loop_turning_waiting_time to measure how long it has been stuck in the loop. I have noticed, that there is one particular place in the map where this loop happens most frequently. While the rover is in the loop, it rotates in the loop endlessly with a velocity at around a max velocity of 2.5 m/s and its steering angle is at around 14-15. So when all these conditions get satisfied for a time period of loop_turning_waiting_time which is 1 second, I stop the car and make it steer at a smaller but different angle. This in turn breaks the loop.
+
 #### 3. Autonomous Mode, Results, and Potential Improvements
 
-The simulator I used for development is: **800x600 resolution, "Fantastic" graphic quality, and 22 frames per second.** Under these settings, I only need to swtich to manual mode to get Rover unstuck in very rare occasions, while getting 60.1% of the world mapped at 80.7% fidelity. Rover is also able to pick up 4 rocks under only 438 seconds. 
+The simulator I used for development is: **1024x768 resolution, "Fantastic" graphic quality, and 22 frames per second.** Under these settings, while getting 60.1% of the world mapped at 80.7% fidelity. Rover is also able to pick up 4 rocks under only 500 seconds on average barring those situations where it gets stuck at rocks. 
 
 ![Autonomous Result][image5]
 
@@ -284,12 +288,10 @@ Some potential improvements includes but not limited to:
 
 1. Go backwards after picking up a rock so Rover has more navigable terrain to decide where to go next.
 2. Go alongside the mountain/obstacle when at big open space to ensure more thorough exploration.
-3. Avoid running into rocks that are in the middle of an open space by taking into account of obstacles angles when deciding steer.
-4. Speed up the Rover to allow faster exploration
-5. Dynamically adjust the color threshold used to determine rocks so as to take into account the lighting effects on rocks
-6. Have a record of where Rover has been to and hasn't so it can explore more thoroughly.
-7. More clever ways to get unstuck in different situations.
-8. etc.
+3. Speed up the Rover to allow faster exploration
+4. Close those regions of the map where it has already been to, located and collected all samples which are present and hasn't missed collecting a single sample.
+5. Avoid running into rocks that are in the middle of an open space by taking into account of obstacles angles when deciding steer.
+6. After it has picked up all the rocks, make it go to the starting position using some search algorithm like A* search.
 
 
 
