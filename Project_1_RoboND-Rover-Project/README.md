@@ -15,8 +15,7 @@
 [image7]: misc/grid_with_direction.jpg
 [image8]: misc/rock_threshold.png
 [image9]: misc/vision.png
-[image10]: misc/simulator_setting.png
-[image11]: misc/simulator.jpg
+[image10]: misc/simulator.jpg
 
 ## Project Objective
 In this project, I will be writing code to autonomously map a simulated environment, search for samples of interest, and pick them up. 
@@ -41,11 +40,10 @@ When you launch (double click on) the simulator you will have the option to set 
 
 Click "Play" to launch the simulator!
 
-![simulator][image10]
 
 Once you click Play you'll see a screen that looks like the one below. Choose "Training Mode" to be able to manually drive the rover around in the environment. You'll notice the app takes over your mouse immediately. You can use the esc key to get your mouse back.
 
-![simulator][image11]
+![simulator][image10]
 
 **Manual Controls**
 
