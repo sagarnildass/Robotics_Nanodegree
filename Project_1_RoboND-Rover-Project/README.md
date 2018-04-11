@@ -227,13 +227,11 @@ Rover.nav_dists, Rover.nav_angles = to_polar_coords(navigable_x_rover, navigable
 
 The decision step of the Rover is handled in the `decision_step()` (in `decision.py`). In this step, I will write conditional logic to control the behaviors of the Rover.
 
-There is a moderate amount of code written for this step, so I will only explain the high level strategy here.
-
 **In the 'forward' mode**
 
 1. If there is still more navigable terrin to explore and it hasn't reached the max velocity `2.5 m/s` I defined, I let Rover keep accelerating at `0.25 m/s^2` until it has reached its max velocity. Otherwise, I stop the Rover and swtich to 'stop' mode.
 2. When moving, I set the steer to the mean of navigable angles with outliers (i.e. outside 25-75% IQR) excluded, clipped to reside between (-15 and 15 -- the Rover limit). By doing this, Rover will always try to go in the direction in the middle of navigable terrain, and also smoothly without constatly turning left and right for a tiny amount.
-3. When the navigable angles are big and wide enough -- the boundry is determined by a parameter called `random_direction_angles`, I set  the steer to a random angle sampled from a normal distribution (centered at the navigable angles mean, plus or minus 3 based on the direction it's going right now, with standard deviation of 3) with the probability of 40%. The **rationale** behind this complicated random sampling is to add randomness so Rover has the chance of going to different places when come to a big open space, instead of always going to the same direction and never be able to explore other places.
+3. When the navigable angles are big and wide enough -- the boundry is determined by a parameter called `random_direction_angles`, I set  the steer to a random angle sampled from a normal distribution (centered at the navigable angles mean, plus or minus 3 based on the direction it's going right now, with standard deviation of 3) with the probability of 40%. The **logic** behind this complicated random sampling is to add randomness so Rover has the chance of going to different places when come to a big open space, instead of always going to the same direction and never be able to explore other places.
 
 Here is an example of the code used for idea 3:
 
