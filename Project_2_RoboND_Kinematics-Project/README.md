@@ -207,10 +207,6 @@ We then analyze the left and right hand sides of the equation above independentl
 
 The result can be seen in this [youtube video](https://youtu.be/THQ01RUHObg). As you see, the arm moves in a very ineffective way.
 
-# Advanced Solution
-
-*Will work on advanced solution after the course is passed.*
-
 
 # Appendix 1. How to Run
 
