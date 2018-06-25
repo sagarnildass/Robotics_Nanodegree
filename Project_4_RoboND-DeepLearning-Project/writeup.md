@@ -1,5 +1,5 @@
-# RoboND-P04-Follow-Me
-## Udacity Robotics Nanodegree.
+# RoboND Project 4 - Follow-Me
+## Author - Sagarnil Das
 
 [//]: # (Image References)
 [title_image]: ./images/hero_far.png
