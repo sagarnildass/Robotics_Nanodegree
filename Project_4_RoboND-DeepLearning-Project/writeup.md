@@ -24,7 +24,9 @@ The basic idea behind a fully convolutional network is that it doesn't have any 
 
 So the final output layer will be the same height and width as the input image, but the number of channels will be equal to the number of classes. If we’re classifying each pixel as one of fifteen different classes, then the final output layer will be height x width x 15 classes. FCNs comprises of mainly 3 parts: an encoder, a 1x1 convolution and a decoder. The 1x1 convolution has small height and width but much bigger depth due to the use of filters in the preceeding encoder part. The 1x1 convolution's height and width will be the same as the layer preceeding it. The reason for using 1x1 convolution is that it acts as a fully connected layer, but the major advantage of it is that it retains spatial information of all the pixels.
 
-The 2nd portion of the network is called the decoder.t is built up of layers of transposed convolutions whose outputs increase the height and width of the input while decreasing it's depth. Skip connections are also used at all points in the decoder which in this case concatenates the input to the encoder layer of the same size with the decoded layer.
+The 2nd portion of the network is called the decoder.t is built up of layers of transposed convolutions whose outputs increase the height and width of the input while decreasing it's depth. Skip connections are also used at all points in the decoder which in this case concatenates the input to the encoder layer of the same size with the decoded layer. Skip connections allow the network to retain information from prior layers that were lost in subsequent convolution layers. Skip layers use the output of one layer as the input to another layer. By using information from multiple image sizes, the model retains more information through the layers and is therefore able to make more precise segmentation decisions. If there was some information that was captured in the initial layers and was required for reconstruction during the up-sampling done using the FCN layer. If we would not have used the skip architecture that information would have been lost (or should say would have turned too abstract for it to be used further ). So the information that we had in the primary layers can be fed explicitly to the later layers using the skip architecture.
+
+
 
 For this project I've chosen a model with 3 encoder layers, the 1x1 convolution, and then 3 decoder layers. The output shape of each layer is as following:
 
@@ -121,6 +123,8 @@ While testing the model in the simulator, it performed remarkably well to detect
 The models performance could be improved by using more training data, particularly when the hero is far away. Other than that the model performs really well.
 
 I believe this model could be used to also idenify and track multiple objects one at a time where each object zeros in to the other object and once it reaches the other object, the drone leaves the first object and follows the 2nd one. This can have a huge military application.
+
+This model could be used to also idenify and track and another object (based on suggestions of using this model for tracking a dog or car) but training data specific too these objects would be required.
 
 ![Hero Tracking][image5]
 
