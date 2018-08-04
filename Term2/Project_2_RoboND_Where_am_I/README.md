@@ -1,6 +1,6 @@
 # Robot localization in a mapped environment using Adaptive Monte Carlo algorithm
 ## Udacity Term 2 RoboND Localization Project
-##Author - Sagarnil Das
+## Author - Sagarnil Das
 
 ### Abstract
 Localization is the challenge of determining the robot’s pose in a mapped environment. This is done by implementing a probabilistic algorithm to filter noisy sensor measurements and track the robot’s position and orientation. This paper focuses on localizing a robot in a known mapped environment using Adaptive Monte Carlo Localization[1] or Particle Filters method and send it to a goal state. ROS, Gazebo and RViz were used as the tools of the trade to simulate the environment and programming two robots for performing localization. 
