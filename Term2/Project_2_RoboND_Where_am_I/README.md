@@ -70,8 +70,12 @@ Both robots satisfied the two conditions, i.e. Both were successfully localized 
 
 ## References
 [1] S. Thrun, Particle filters in Robotics. Carnegie Mellon University, 2002.
+
 [2] C. Robotics, “Navigating with jackal,”
+
 [3] M. Quigley et al, “Ros: an open-source robot operating system,” 2009.
+
 [4] https://autonomoustuff.com/product-category/lidar/hokuyo-laser scanners/, “Hokuyo scanner home page,” 2018.
+
 [5] http://wiki.ros.org/navigation/Tutorials/Navigationbasicnavigation tuning guide,” 2018.
 
