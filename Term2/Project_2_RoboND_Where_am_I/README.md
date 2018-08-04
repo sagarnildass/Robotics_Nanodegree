@@ -33,7 +33,7 @@ the goal, i.e. head south-east, turn around where the obstacle ends and reach th
 
 ![Benchmark at Goal](images/udacity_robot_goal.png "Figure 2. Benchmark At Goal.")
 
-##### Student - DougBot
+##### Student - SagarBot
 The time taken for the particle filters to converge was around 30-40 seconds. The SagarBot reaches the goal within approximately 15-20 minutes. So here, a deterioration of the results is observed. This can be attributed to the heavier mass of the SagarBot, even though no wheel slippage was kept for both the robots in their respective URDFs.
 ![SagarBot At Goal](images/sagar_robot_goal.png "Figure 3. SagarBot At Goal.")
 
