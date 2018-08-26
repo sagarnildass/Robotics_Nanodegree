@@ -78,4 +78,19 @@ The ROS package slam_project deploys the RTAB-Map to perform SLAM on two environ
 ```
 The transform tree associated with the robot is shown in Figure 4.
 
-![Transform tree](images/udacity_world/watermarked/tf_frames_udacity_world.jpeg "Figure 3: TF frames associated with the robot")
+![Transform tree](images/udacity_world/watermarked/tf_frames_udacity_world.jpeg "Figure 4: TF frames associated with the robot")
+
+Figure 4: TF frames associated with the robot
+
+For this project, the robot from the previous localization project: https://github.com/sagarnildass/Robotics_Nanodegree/tree/master/Term2/Project_2_RoboND_Where_am_I was taken as a starting point. The xacro file provides the shape and size of the robot in macro format. For the sagar\_bot, a fixed base is used. A single link, with the name defined as "chassis", encompassed the base as well as the caster wheels. Each link has specific elements, such as the inertial or the collision elements. The chassis is a cuboidal (or box), whereas the casters are spherical as denoted by their "geometry" tags. Each link (or joint) has an origin (or pose) defined as well. Every element of that link or joint will have its own origin, which will be relative to the link's frame of reference.
+
+For this base, as the casters are included as part of the link (for stability purposes), there is no need for any additional links to define the casters, and therefore no joints to connect them. The casters do, however, have friction coefficients defined for them, and are set to 0, to allow for free motion while moving. 
+
+Two wheels were attached to the robot. Each wheel is represented as a link and is connected to the base link (the chassis) with a joint. For each wheel, a "collision", "inertial" and "visual" elements are present. The joint type is set to "continuous" and is similar to a revolute joint but has no limits on its rotation. It can rotate continuously about an axis. The joint will have it's own axis of rotation, some specific joint dynamics that correspond to the physical properties of the joint like "friction", and certain limits to enforce the maximum "effort" and "velocity" for that joint. The limits are useful constraints in regards to a physical robot and can help create a more robust robot model in simulation as well. To enable the robot to perform appearance based mapping using visual odometry, the generic RGB camera of the original model is upgraded to a Kinect RGB-D camera. The camera is mounted to the front of the chassis to allow for unobstructed view, facing in forward direction. The mesh files for the Kinect camera model are downloaded from the Gazebo model database and included in the slam_project/meshes folder. Like the original model, the rover is fitted with a Hokuyo 2D laser range finder. The corresponding hokuyo link is mounted with a fixed joint on the top of the chassis, to let the laser beans rotate without hitting any part of the robot. the laser range finder provides more precise localization and thereby refines geometric constraints The differential drive plugin is configured in the sagar_bot.gazebo file to publish control commands to the /cmd_vel topic and odometry messages to the /odom
+topic. The camera plugin is configured to publish raw RGB images to /camera/rgb/image_raw and raw depth
+images to /camera/depth/image_raw. The laser plugin is configured to publish messages of type LaserScan to the
+/scan topic. A graphical view of the ROS topics and nodes is shown in figure 5 and a closeup of the robot model is depicted in Figure 6.
+
+![ROS topics](images/udacity_world/rosgraph.png "Figure 5: RQT plot of the topics after all the nodes have been launched")
+
+Figure 5: RQT plot of the topics after all the nodes have been launched
