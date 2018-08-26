@@ -101,12 +101,22 @@ Figure 6: Robot close up
 
 ## Results
 
-### Kitchen Dining 3d
+### Kitchen Dining
 
-![RTAB-Map 3d Kitchen-dining](images/udacity_world/watermarked/rtabmap_udacity_world.jpeg "Figure 7: Point cloud data reconstructed with RTAB-Map")
+![RTAB-Map 3d Kitchen-dining](images/udacity_world/watermarked/rtabmap_udacity_world.jpeg "Figure 7: Point cloud data reconstructed with RTAB-Map for the kitchen-dining world")
 
-Figure 7: Point cloud data reconstructed with RTAB-Map
+Figure 7: Point cloud data reconstructed with RTAB-Map for the kitchen-dining world
 
 ![RTAB-Map 2d Kitchen-dining](images/udacity_world/watermarked/2d_world_udacity_world.jpeg "Figure 8: 2d occupancy grid reconstructed along with the robot's trajectory")
 
 Figure 8: 2d occupancy grid reconstructed along with the robot's trajectory
+
+![RViz 3d Kitchen-dining](images/udacity_world/watermarked/rviz_udacity_world.jpeg "Figure 9: RViz view after map completion")
+
+Figure 9: RViz view after map completion
+
+### Sagar Cafe
+
+![RTAB-Map 3d Sagar-cafe](images/sagar_cafe_world/rtabmap_sagar_cafe_world.jpeg "Figure 10: Point cloud data reconstructed with RTAB-Map for the sagar-cafe world")
+
+Figure 10: Point cloud data reconstructed with RTAB-Map for the sagar-cafe world
