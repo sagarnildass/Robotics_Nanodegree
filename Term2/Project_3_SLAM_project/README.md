@@ -111,7 +111,7 @@ Figure 7: Point cloud data reconstructed with RTAB-Map for the kitchen-dining wo
 
 Figure 8: 2d occupancy grid reconstructed along with the robot's trajectory
 
-![RViz 3d Kitchen-dining](images/udacity_world/watermarked/rviz_udacity_world.jpeg "Figure 9: RViz view after map completion")
+![RViz 3d Kitchen-dining](images/udacity_world/watermarked/rviz_udacity_world.jpeg "Figure 9: RViz view of the kitchen-dining world after map completion")
 
 Figure 9: RViz view after map completion
 
@@ -120,3 +120,18 @@ Figure 9: RViz view after map completion
 ![RTAB-Map 3d Sagar-cafe](images/sagar_cafe_world/rtabmap_sagar_cafe_world.jpeg "Figure 10: Point cloud data reconstructed with RTAB-Map for the sagar-cafe world")
 
 Figure 10: Point cloud data reconstructed with RTAB-Map for the sagar-cafe world
+
+![RViz 3d sagar-cafe](images/sagar_cafe_world/rviz_sagar_cafe_world.jpeg "Figure 11: RViz view of the sagar-cafe world after map completion")
+
+Figure 11: RViz view of the sagar-cafe world after map completion
+
+## Discussion
+
+In both the environments, successful mapping was performed in order to identify the ground truth and the distinctive features of the environment like, walls, tables, chairs, trees, people etc. In the sagar_cafe world, the robot could not enter the kitchen area, which can be seen in right lower corner of Figure 13 and Figure 14. One of the possible explanations might be that there is a height difference of the floor between the living room and the kitchen. Another possible explanation might be that there is a transparent door separating those two rooms and hence the robot couldn't pass through. 
+
+The generated 2d and 3d maps can be improved by doing more mapping runs which cover the environment in a more complete manner and by optimizing the loop closure detection further.
+
+## Future work
+
+An interesting future work would be to explore the RTAB-Map package's visualization section in more details. The obstacle detection feature can be deployed in order to extracts obstacles and the ground from your point cloud. With this information in hand, these obstacles can be avoided when executing a desired path. Another potential area would be Wifi signal strength mapping. This feature allows the user to visualize the strength of your robot’s WiFi connection. This can be important in order to determine where the robot may lose its signal, therefore dictating it to avoid certain areas. The situation can also be remedied with larger antennas. 
+
