@@ -76,3 +76,6 @@ The ROS package slam_project deploys the RTAB-Map to perform SLAM on two environ
     ├── kitchen_dining.world
     └── sagar_cafe.world
 ```
+The transform tree associated with the robot is shown in Figure 4.
+
+![Transform tree](images/udacity_world/watermarked/tf_frames_udacity_world.jpeg "Figure 3: TF frames associated with the robot")
