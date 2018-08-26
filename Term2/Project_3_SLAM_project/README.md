@@ -9,5 +9,5 @@ In SLAM (Simultaneous Localization and Mapping), a robot must  construct a map o
 In this paper, two simulation environments were provided where SLAM was performed. The robot was successfully able to localize itself and map the 3d world. The benchmark environment is called kitchen-dining (Figure 1) and the second environment is that of a cafeteria called sagar-cafe (Figure 2).
 
 
-!['Kitchen-dining world'](https://github.com/sagarnildass/Robotics_Nanodegree/tree/master/Term2/Project_3_SLAM_project/images/udacity_world/watermarked/gazebo_udacity_world.jpeg?raw=true)
+![Kitchen-dining world](https://github.com/sagarnildass/Robotics_Nanodegree/tree/master/Term2/Project_3_SLAM_project/images/udacity_world/watermarked/gazebo_udacity_world.jpeg?raw=true)
 
