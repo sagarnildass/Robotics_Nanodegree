@@ -94,3 +94,7 @@ images to /camera/depth/image_raw. The laser plugin is configured to publish mes
 ![ROS topics](images/udacity_world/rosgraph.png "Figure 5: RQT plot of the topics after all the nodes have been launched")
 
 Figure 5: RQT plot of the topics after all the nodes have been launched
+
+![Robot close up](images/sagar_cafe_world/watermarked/robot_close_up.jpeg "Figure 6: Robot close up")
+
+Figure 6: Robot close up
