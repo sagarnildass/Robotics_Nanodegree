@@ -35,3 +35,44 @@ RTAB-Map (Real Time Appearance Based Mapping) is a graph based SLAM approach. Ap
 
 Figure 3: RTAB-Map block diagram
 
+The front end of RTAB-Map focuses on sensor data used to obtain the constraints that are used for feature optimization approaches. Although landmark constraints are used for other graph SLAM methods like the 2d graph SLAM, RTAB-Map does not use them. Only odometry constraints and loop closure constraints are considered here. The odometry constraints can come from wheel encoders, IMU or visual odometry. Visual odometry is accomplished by 2d features such as Speeded Up Robust Features (SURF). RTAB-Map is appearance based with no metric distance information. It can use a single monocular camera to detect loop closure. For metric graph SLAM, RTAB-Map requires an RGB-D camera or a stereo camera to compute the geometric constraint between the images of a loop closure. A laser range finder can also be used to improve or refine this geometric constraint by providing a more precise location. The front end also involves graph management, which includes node creation and loop closure detection using Visual Bag of Words.
+
+The back end of RTAB-Map includes graph optimization and assembly of an occupancy grid from the data of the graph. Loop closure detection is the process of finding a match between the current and previously visited locations in SLAM. There are two types of loop closure detection:
+
+a) Local Loop closure detection: More probabilistic SLAM methods use Local loop closure detection, where matches are found between a new observation and a limited map region. The size and location of this limited map region is determined by the uncertainty associated with the robot's position. This type of approach fails if the estimated position is incorrect.
+
+b) Global Loop closure detection: In this approach, a new location is compared with the previously visited locations. If no match is found, the new location is added to memory. As the map grows and more locations are added to the memory, the amount of time to check whether the location has been previously seen increases linearly. If the time it takes to search and compare new images to the one stored in memory becomes larger than the acquisition time, the map becomes ineffective. RTAB-Map uses a global loop closure approach combined with other techniques like Visual bag of words, quantization, graph optimization techniques like Tree Based Network Optimizer (TORO) or General Graph Optimization (G2O) to ensure that the loop closure process happens in real time.
+
+## Scene and Robot configuration
+
+The ROS package slam_project deploys the RTAB-Map to perform SLAM on two environments. The first environment is an environment provided by Udacity as a part of this research project and is named Kitchen-Dining. The second environment is a custom made environment of a cafeteria named sagar_cafe. Just like other robotics project, this project has been organized into different folders containing the meshes, Gazebo SDF files, scripts, robot model URDFs, configuration files and launch files. The following diagram depicts the file structure:
+
+
+```
+├── CMakeLists.txt
+├── rtabmap_kitchen_dining.db
+├── launch
+│   ├── config
+│   │   └── robot_slam.rviz
+│   ├── mapping.launch
+│   ├── robot_description.launch
+│   ├── rviz.launch
+│   ├── teleop.launch
+│   └── world.launch
+├── materials
+│   └── textures
+│       └── kinect.png
+├── meshes
+│   ├── hokuyo.dae
+│   └── kinect.dae
+├── package.xml
+├── README.md
+├── rtab_run
+├── teleop
+├── urdf
+│   ├── sagar_bot.gazebo
+│   └── sagar_bot.xacro
+└── worlds
+    ├── kitchen_dining.world
+    └── sagar_cafe.world
+```
