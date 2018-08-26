@@ -98,3 +98,15 @@ Figure 5: RQT plot of the topics after all the nodes have been launched
 ![Robot close up](images/sagar_cafe_world/watermarked/robot_close_up.jpeg "Figure 6: Robot close up")
 
 Figure 6: Robot close up
+
+## Results
+
+### Kitchen Dining 3d
+
+![RTAB-Map 3d Kitchen-dining](images/udacity_world/watermarked/rtabmap_udacity_world.jpeg "Figure 7: Point cloud data reconstructed with RTAB-Map")
+
+Figure 7: Point cloud data reconstructed with RTAB-Map
+
+![RTAB-Map 2d Kitchen-dining](images/udacity_world/watermarked/2d_world_udacity_world.jpeg "Figure 8: 2d occupancy grid reconstructed along with the robot's trajectory")
+
+Figure 8: 2d occupancy grid reconstructed along with the robot's trajectory
