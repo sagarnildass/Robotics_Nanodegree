@@ -11,3 +11,8 @@ In this paper, two simulation environments were provided where SLAM was performe
 
 ![Kitchen-dining world](images/udacity_world/watermarked/gazebo_udacity_world.jpeg "Figure 1. Robot model in Kitchen-Dining world")
 
+Figure 1: Robot model in Kitchen-Dining world
+
+![Sagar-Cafe world](images/sagar_cafe_world/gazebo_sagar_cafe_world.jpeg.jpeg "Figure 2: Robot model in Cafe-world")
+
+Figure 2: Robot model in Cafe-world
