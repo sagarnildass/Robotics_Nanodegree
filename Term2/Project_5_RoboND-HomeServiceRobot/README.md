@@ -30,7 +30,3 @@ cd ~/catkin_ws
 source devel/setup.bash
 ./src/home_service.sh
 ```
-
-If everything is ready to rock'n'roll, the below is the result of running these commands (at 3x speed).
-
-<p align="center"><img src="./resources/home-service-bot.gif"></p>
