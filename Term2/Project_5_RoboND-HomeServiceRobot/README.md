@@ -15,7 +15,7 @@ Clone the required repositories to the `~/catkin_ws/src` folder. Note that this 
 
 ```sh
 cd ~/catkin_ws/src
-git clone https://github.com/kevinfructuoso/home-service-bot.git
+git clone https://github.com/sagarnildass/Robotics_Nanodegree.git
 rosdep -i install gmapping -y
 rosdep -i install turtlebot_teleop -y
 rosdep -i install turtlebot_rviz_launchers -y
